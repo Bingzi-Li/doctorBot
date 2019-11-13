@@ -59,14 +59,17 @@ openings('No worries, and ').
 openings('I will help you, and ').
 openings('Take your time, and ').
 openings('Take your time, just talk to me, ').
+
 /* get a random one from openings */
 opening(OP):-
     findall(A, openings(A), OpeningsList),
     random_member(OP, OpeningsList).
 
-/* asking part of a interrogative sentence */
+/* beginning a interrogative sentence */
 question_starts('are you feeling ').
 question_starts('do you feel ').
+
+/* randomly generate a starting sentence */
 question_start(QS):-
     findall(S, question_starts(S), Question_startsList),
     random_member(QS, Question_startsList).
